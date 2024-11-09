@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Wallcott"; /* 이 이름으로 폰트를 사용할 수 있어 */
+    src: url("fonts/Wallcott-Regular.otf") format("opentype"); /* 파일 경로와 형식을 지정 */
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: "Wallcott", sans-serif; /* MintJams 폰트가 로드되지 않을 경우를 대비해 sans-serif를 백업 폰트로 설정 */
+}
+#sample-text {
+    font-family: "Wallcott"; /* 기본 폰트는 MintJams */
+    font-size: 50px;
+    text-align: center;
+    color: #00FFFF; /* 민트색 */
+}
+/* 슬라이더 바 전체 스타일 */
+#font-slider {
+    -webkit-appearance: none; /* 기본 스타일 제거 */
+    width: 62%;
+    height: 8px;
+    background: #ccc; /* 트랙의 기본 배경색 */
+    outline: none;
+    border-radius: 5px;
+}
+
+/* 슬라이더 썸(thumb) 스타일 */
+#font-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #00FFFF; /* 썸을 민트색으로 설정 */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Firefox 용 슬라이더 썸 스타일 */
+#font-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #00FFFF; /* 썸을 민트색으로 설정 */
+    border-radius: 50%;
+    cursor: pointer;
+}
+#title {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* 중앙 정렬 */
+    font-family: "Wallcott", sans-serif; /* MintJams 폰트 적용 */
+    font-size: 50px;
+    color: #00FFFF; /* 민트색 적용 */
+}
+#footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    color: #00FFFF; /* 민트색 적용 */
+    font-family: Helvetica, sans-serif;
+    margin-top: 10px;
+}
+#controls {
+    position: fixed;
+    bottom: 40px; /* 저작권 문구와 간격을 주기 위해 더 위로 배치 */
+    width: 80%;
+    text-align: center;
+}
+
+#input-text {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Wallcott"; /* 입력 텍스트 폰트 */
+    color: #00FFFF; /* 입력 텍스트 민트색 */
+    background-color: #000000; /* 인풋 배경 검정 */
+    border: 1px solid #00FFFF; /* 인풋 테두리 민트색 */
+    margin-bottom: 10px; /* 슬라이더와의 간격 */
+}
+
+#font-slider {
+    width: 100%;
+    margin-bottom: 10px; /* 저작권 문구와의 간격 */
+}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallcott Font Display</title>
+    <style>
+        /* 폰트 파일 불러오기 */
+        @font-face {
+            font-family: "Wallcott";
+            src: url("fonts/Wallcott-Regular.otf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        /* 기본 스타일 */
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            background-color: #000000; /* 배경색 검정 */
+            color: #00FFFF; /* 텍스트 색상 민트 */
+        }
+        
+        #sample-text { 
+            font-family: "Wallcott"; 
+            font-size: 50px; 
+            text-align: center; 
+            color: #00FFFF; /* 샘플 텍스트 색상 민트 */
+        }
+        
+        #controls { 
+            position: fixed; 
+            bottom:20px; 
+            width: 80%; 
+            text-align: center; 
+        }
+        
+        #font-slider { 
+            width: 60%; 
+        }
+        
+        #input-text { 
+            width: 60%; 
+            padding: 10px; 
+            font-size: 16px; 
+            font-family: "Wallcott"; /* 입력 텍스트 폰트 */
+            color: #00FFFF; /* 입력 텍스트 민트색 */
+            background-color: #000000; /* 인풋 배경 검정 */
+            border: 1px solid #00FFFF; /* 인풋 테두리 민트색 */
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="title">Wallcott Font Tester</div> <!-- 상단 중앙 타이틀 텍스트 -->
+    <div id="sample-text">Dummy Text</div>
+    <div id="controls">
+        <input type="text" id="input-text" placeholder="Text here">
+        <input type="range" id="font-slider" min="50" max="200" value="50">
+    </div>
+    <div id="footer">Copyright ⓒ Studio BBuri All rights reserved.</div> <!-- 저작권 문구 -->
+    </div>
+    <script>
+        const sampleText = document.getElementById('sample-text');
+        const fontSlider = document.getElementById('font-slider');
+        const inputText = document.getElementById('input-text');
+        
+        inputText.addEventListener('input', () => {
+            sampleText.textContent = inputText.value;
+        });
+        
+        fontSlider.addEventListener('input', () => {
+            sampleText.style.fontSize = fontSlider.value + 'px';
+        });
+    </script>
+</body>
+</html>
